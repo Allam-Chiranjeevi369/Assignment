@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html  xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - FOP</title>
+    <link rel="stylesheet" href = "/style.css" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Registration</h1>
+        <form action="/register" method="post">
+            <input type="text" name="userName" id="userName" placeholder="Name" required>
+            <input type="email" name="userMail" id="userMail"  placeholder="Email" required>
+            <input type="number" name="age" id="age" placeholder="Age" min="1" pattern="[0-9]{3}" required>
+            <input type="date" name="dateOfBirth"  id="dateOfBirth" placeholder="Date of birth" required>
+            <button type="submit" class="btn">Register</button>
+        </form>
+        <h5 th:if="${error}" style="color: red;" th:text="${error}"></h5>
+    </div>
+</body>
+</html>
